@@ -19,3 +19,8 @@ Route::get('/',static function () {
 Route::Get('test', static function (){
     return view('p1');
 });
+
+Route::Get('man', static function(){
+    return view('Profile.man',['name'=>'Shaker','family'=>'Almazini',
+        'coress'=>['php','flutter','dart','laravel']]);
+});
