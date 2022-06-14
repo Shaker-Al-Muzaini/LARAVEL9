@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\mycontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,5 @@ Route::Get('man', static function(){
     return view('Profile.man',['name'=>'Shaker','family'=>'Almazini',
         'coress'=>['php','flutter','dart','laravel']]);
 });
+Route::get('testCon',[mycontroller::class,'get_my_name']);
+Route::get('st/{id}/p',[mycontroller::class,'get_id']);
