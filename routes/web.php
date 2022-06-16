@@ -29,5 +29,8 @@ Route::Get('man', static function(){
 Route::get('testCon',[mycontroller::class,'get_my_name']);
 Route::get('st/{id}/p',[mycontroller::class,'get_id']);
 Route::get('studend_create',[studendController::class,'create']);
-Route::get('studend_store',[studendController::class,'store']);
-
+Route::post('studend_store',[studendController::class,'store']);
+Route::get('studend',[studendController::class,'index']);
+Route::get('studend_edit{id}',[studendController::class,'edit']);
+Route::post('studend_upDate{id}',[studendController::class,'update']);
+Route::post('studend_delete{id}',[studendController::class,'destroy']);
