@@ -9,8 +9,8 @@
         <th scope="col">Nationality</th>
         <th scope="col">Edit</th>
         <th scope="col">DELETE</th>
-        <th scope="col">Update_At</th>
         <th scope="col">Create_At</th>
+        <th scope="col">Update_At</th>
         </thead>
         <tbody>
         @foreach($studend as $studends )
@@ -27,6 +27,8 @@
 
             </form>
         </td>
+                <td>{{$studends->created_at}}</td>
+                <td>{{$studends->updated_at}}</td>
 
             </tr>
         @endforeach
