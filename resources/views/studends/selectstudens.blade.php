@@ -25,8 +25,6 @@
 
         <br>
     </div>
-    <br>
-    <button type="submit" class="btn btn-primary" id="save">Save</button>
             <br>
             <button type="submit" class="btn btn-primary" id="save">Save</button>
         </form>
