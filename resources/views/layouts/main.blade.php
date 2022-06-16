@@ -7,11 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
 </head>
+<br>
 @include('layouts.bottcss')
 <body>
-<div class="container">
 @yield('bott')
-</div>
 </body>
 @include('layouts.bottjs')
 </html>
