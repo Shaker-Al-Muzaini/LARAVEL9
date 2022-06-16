@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\mycontroller;
 use App\Http\Controllers\Studends\studendController;
 use Illuminate\Support\Facades\Route;
@@ -27,5 +28,4 @@ Route::Get('man', static function(){
 });
 Route::get('testCon',[mycontroller::class,'get_my_name']);
 Route::get('st/{id}/p',[mycontroller::class,'get_id']);
-Route::get('p1con',[studendController::class,'get_studend']);
-Route::get('studen',[studendController::class,'get_studend_name']);
+Route::get('studend_store',[studendController::class,'store']);
