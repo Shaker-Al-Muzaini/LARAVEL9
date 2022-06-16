@@ -29,3 +29,4 @@ Route::Get('man', static function(){
 Route::get('testCon',[mycontroller::class,'get_my_name']);
 Route::get('st/{id}/p',[mycontroller::class,'get_id']);
 Route::get('studend_store',[studendController::class,'store']);
+
