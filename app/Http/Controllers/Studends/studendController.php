@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Studends;
 use App\Http\Controllers\Controller;
 
+
 class studendController extends Controller
 {
     public function  get_studend():string
@@ -15,8 +16,19 @@ class studendController extends Controller
         return view('studends.selectstudens');
     }
 
-    public  function store()
+
+
+    public  function create()
     {
         return view('studends.selectstudens');
+    }
+
+    public  function store(request $request)
+    {
+        $name= $request ['name'];
+        $Brith_Date= $request ['Brith_Date'];
+        echo $name;
+        echo $Brith_Date;
+        return view('p1');
     }
 }
