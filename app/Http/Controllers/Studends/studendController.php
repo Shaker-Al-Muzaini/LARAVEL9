@@ -20,7 +20,7 @@ class studendController extends Controller
 
 
 
-    public  function store()
+    public  function store() 
     {
         return redirect('studend_create');
 
