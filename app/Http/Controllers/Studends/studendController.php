@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
     
 class studendController extends Controller 
 {
-    public function  get_studend():string
+    public function  get_studend():string 
     { 
         $name='Is NAme'; 
         return view('p1')->
