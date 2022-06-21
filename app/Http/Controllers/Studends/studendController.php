@@ -7,7 +7,7 @@ class studendController extends Controller
 {
     public function  get_studend():string  
     {  
-        $name='Is NAme';  
+        $name='Is NAme';   
         return view('p1')-> 
             with('name',$name);
     }
