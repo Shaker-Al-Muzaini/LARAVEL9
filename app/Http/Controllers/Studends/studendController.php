@@ -9,7 +9,7 @@ class studendController extends Controller
     {   
         $name='Is NAme';   
         return view('p1')->  
-            with('name',$name);
+            with('name',$name); 
     }
     public  function get_studend_name()
     {
