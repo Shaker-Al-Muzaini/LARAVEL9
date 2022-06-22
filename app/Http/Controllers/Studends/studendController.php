@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Controllers\Studends;  
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller; 
     
        
 class studendController extends Controller  
