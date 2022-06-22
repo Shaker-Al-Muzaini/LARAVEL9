@@ -3,7 +3,7 @@ namespace App\Http\Controllers\Studends;
 use App\Http\Controllers\Controller;
     
       
-class studendController extends Controller 
+class studendController extends Controller  
 {  
     public function  get_studend():string   
     {  
