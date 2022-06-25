@@ -18,6 +18,8 @@
 @foreach($ar as $arss)
     <h2>{{$arss}}</h2>
 @endforeach
+
+<div>
 <button class="btn btn-primary">click</button>
 
 @stop

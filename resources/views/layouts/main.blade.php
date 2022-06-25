@@ -12,5 +12,6 @@
 <body>
 @yield('bott')
 </body>
+<br>
 @include('layouts.bottjs')
 </html>

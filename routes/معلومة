@@ -123,7 +123,21 @@ php  artisan cache:clear
 /*
  Fluent او  Query Builder
  */
+/*
+انشاء  form  valediction
 
+php artisan make:request nameeeeeee
+
+انشاء  migration
+
+php artisan make:migration  nameeeeeee
+php artisan  migrate
+*/
+
+
+
+انشاء  middleware
+php artisan make: middleware  nameeeeeee
 
 
 

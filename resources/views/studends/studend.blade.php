@@ -1,6 +1,8 @@
+<style>
+    div {text-align: center;}
+</style>
 @extends('layouts.main')
 @section('bott')
-
     <table class="table table-dark table-striped">
         <thead>
         <th scope="col">ID</th>
@@ -22,10 +24,10 @@
         <td>{{$studends->Brith_Date}}</td>
         <td>{{$studends->Nationality}}</td>
         <td><img src="{{$studends->image}}" alt="null" height="80" width="100"></td>
-        <td><a href="{{URL('studend_edit::46779::5'.$studends->id.'18::6798')}}">Edit</a></td>
+        <td><a href="{{URL('studend_edit::46779::5'.$studends->id.'18::6798')}}" class="btn btn-success">Edit</a></td>
         <td>
             <form method="post" action="{{URL('studend_delete'.$studends->id)}}">
-                <input type="hidden" name="_token" value="{{csrf_token()}}">
+               @csrf
                 <button type="submit" class="btn btn-danger">DELETE</button>
 
             </form>
@@ -38,11 +40,17 @@
         @endforeach
         </tbody>
     </table>
+   <div class="row">
+       <div class="d-flex justify-content-center">
+       <p> {{ $studend->links('studends.pa') }}</p>
+   </div>
+    </div>
+
     <br>
-    <div class="row">
-        <div class="col-12">
-            <a href="{{URL('studend_create')}}">inert studend </a>
-        </div>
-{{--        {{$studend->links()}}--}}
+    <div>
+        <a href="{{URL('studend_create')}}">inert studend </a>
     <br>
+
+
+
 @stop

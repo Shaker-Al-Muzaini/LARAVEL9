@@ -9,8 +9,9 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <form action="{{URL('studend_delete'.$studend->id)}}"  method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                <form action="{{URL('studend_upDate'.$studend->id)}}"  method="post" enctype="multipart/form-data">
+                   @csrf
+                    @method('PUT')
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
                         <input type="text" class="form-control" aria-label="Sizing example input"

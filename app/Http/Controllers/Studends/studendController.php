@@ -1,8 +1,9 @@
 <?php
-namespace App\Http\Controllers\Studends;  
-use App\Http\Controllers\Controller; 
-use App\Models\studend;  
-use Illuminate\Http\Request; 
+namespace App\Http\Controllers\Studends;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StudentRequest;
+use App\Models\studend;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use JetBrains\PhpStorm\NoReturn;
 
@@ -31,7 +32,7 @@ class studendController extends Controller
 
     //create
 
-     #[NoReturn] public function store(Request $request)
+     #[NoReturn] public function store(StudentRequest $request)
     {
         $nema=$request['name'];
         $Brith_Date=$request['Brith_Date'];
@@ -47,13 +48,13 @@ class studendController extends Controller
         $studend->name=$nema;
         $studend->Brith_Date=$Brith_Date;
         $studend->Nationality=$Nationality;
-        $studend->image=$path.$names;
+       $result= $studend->image=$path.$names;
 
         //check
-        // $resalt=Storage::disk('local')->exists($path.$name);
+        // $result=Storage::disk('local')->exists($path.$name);
 
         $studend->save();
-        return redirect('studend_create');
+        return redirect('studend_create')->with('massages_session',$result);
 
     }
 
@@ -72,9 +73,9 @@ class studendController extends Controller
         2.إرسال  request مع البيانات
 
 */
-        $paginate=10;
-        $studends=studend::withTrashed()->select('*')
-            ->paginate($paginate);
+        define('pagination',5);
+        $studends=studend::select('*')
+            ->paginate(pagination);
         foreach($studends as $studend) {
             $im =Storage::url($studend->image);
             $studend->image=$im;
@@ -109,7 +110,9 @@ class studendController extends Controller
         $im =Storage::url($studend->image);
         $studend->image=$im;
         $key=['pl'=>'فلسطين','ag'=>'مصر','ar'=>'الأردن'];
+
         return view('studends.edit')->with('studend',$studend)->with('key' ,$key);
+
 
     }
 
@@ -182,6 +185,7 @@ class studendController extends Controller
 
 
     }
+
 
 
 }

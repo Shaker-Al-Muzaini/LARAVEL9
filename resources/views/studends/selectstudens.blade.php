@@ -6,10 +6,22 @@
                 <a href="{{URL('studend')}}">select all studends </a>
             </div>
         </div>
+        <div class="col-12">
+            @if(session()->has('massages_session'))
+                @if(session('massages_session'))
+                    <div class="alert alert-success">Success</div>
+                      @else
+                          <div class="alert alert-danger">Filed</div
+            @endif
+            @endif
+                <div class="col-12">
+                    @foreach($errors->all() as $massage)
+                        <div class="alert alert-danger">{{$massage}}</div>
+                    @endforeach
     <div class="row">
         <div class="col-12">
         <form action="{{URL('studend_store')}}"  method="post" enctype="multipart/form-data">
-            <input type="hidden" name="_token" value="{{csrf_token()}}">
+           @csrf
     <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
         <input type="text" class="form-control" aria-label="Sizing example input" name="name">
@@ -22,7 +34,7 @@
     <div class="input-group input-group-lg">
         <span class="input-group-text" id="inputGroup-sizing-lg">Nationality</span>
         <select name="Nationality" class="form-control" id="Nationality" aria-label="Sizing example input">
-            <option value="-1"></option>
+            <option value=""></option>
 {{--            <option value="pl">فلسطين</option>--}}
 {{--            <option value="ag">مصر</option>--}}
 {{--            <option value="ar">الأردن</option>--}}
@@ -42,9 +54,8 @@
             </div>
             <br>
             <button type="submit" class="btn btn-primary" id="save">Save</button>
-        </form>
 
-    </div>
+        </form>
 
 
 @stop
