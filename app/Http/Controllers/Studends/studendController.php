@@ -29,7 +29,7 @@ class studendController extends Controller
 
 
     public  function create()
-    {
+    { 
 
         return view('studends.selectstudens');
     }
