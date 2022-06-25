@@ -83,6 +83,10 @@ class studendController extends Controller
 
 
         //model
+        //withTrashed   الجميع
+        //onlyTrashed    فقط المحذوف
+
+
         $result=studend::select('*')
             ->get();
        return view('studends.studend')->with('studend',$result);

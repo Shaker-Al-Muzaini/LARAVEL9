@@ -11,6 +11,7 @@
         <th scope="col">DELETE</th>
         <th scope="col">Create_At</th>
         <th scope="col">Update_At</th>
+        <th scope="col">Deleted_at</th>
         </thead>
         <tbody>
         @foreach($studend as $studends )
@@ -29,6 +30,7 @@
         </td>
                 <td>{{$studends->created_at}}</td>
                 <td>{{$studends->updated_at}}</td>
+                <td>{{$studends->deleted_at}}</td>
 
             </tr>
         @endforeach
