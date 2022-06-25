@@ -7,6 +7,7 @@
         <th scope="col">NAME</th>
         <th scope="col">Brith_Date</th>
         <th scope="col">Nationality</th>
+        <th  scope="col">Image</th>
         <th scope="col">Edit</th>
         <th scope="col">DELETE</th>
         <th scope="col">Create_At</th>
@@ -20,7 +21,8 @@
         <td >{{$studends->name}}</td>
         <td>{{$studends->Brith_Date}}</td>
         <td>{{$studends->Nationality}}</td>
-        <td><a href="{{URL('studend_edit'.$studends->id)}}">edit</a></td>
+        <td><img src="{{$studends->image}}" alt="null" height="80" width="100"></td>
+        <td><a href="{{URL('studend_edit::46779::5'.$studends->id.'18::6798')}}">Edit</a></td>
         <td>
             <form method="post" action="{{URL('studend_delete'.$studends->id)}}">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -41,4 +43,6 @@
         <div class="col-12">
             <a href="{{URL('studend_create')}}">inert studend </a>
         </div>
+{{--        {{$studend->links()}}--}}
+    <br>
 @stop

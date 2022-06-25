@@ -1,15 +1,16 @@
 <?php
-namespace App\Http\Controllers\Studends;  
+namespace App\Http\Controllers\Studends;
 use App\Http\Controllers\Controller;
-use App\Models\studend; 
-use Illuminate\Http\Request;  
-use JetBrains\PhpStorm\NoReturn; 
- 
+use App\Models\studend;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use JetBrains\PhpStorm\NoReturn;
+
 
 class studendController extends Controller
 {
     public function  get_studend():string
-    { 
+    {
 
         $name='Is NAme';
         return view('p1')->
@@ -35,61 +36,53 @@ class studendController extends Controller
         $nema=$request['name'];
         $Brith_Date=$request['Brith_Date'];
         $Nationality=$request['Nationality'];
-
-        //row
-
-
-//        $query="INSERT INTO studend (name,Brith_Date,Nationality) VALUES
-//                ('$nema','$Brith_Date','$Nationality')";
-//       $result= DB::insert($query);
-//        dd($result);
-
-
-        ////Query Builder
-
-
-//       DB::table('studend')
-//->insert(['name'=>$nema,'Brith_Date'=>$Brith_Date,'Nationality'=>$Nationality]);
-
-
-
          //model
+        $image=$request->file('image');
+        $path='up_lodes/images';
+        $names=time()+rand(1,10000000).'.'.$image->getClientOriginalExtension();
+        Storage::disk('local')->put($path.$names,file_get_contents($image));
 
-         $studend=new studend();
-         $studend->name=$nema;
-         $studend->Brith_Date=$Brith_Date;
-         $studend->Nationality=$Nationality;
-         $studend->save();
+
+        $studend=new studend();
+        $studend->name=$nema;
+        $studend->Brith_Date=$Brith_Date;
+        $studend->Nationality=$Nationality;
+        $studend->image=$path.$names;
+
+        //check
+        // $resalt=Storage::disk('local')->exists($path.$name);
+
+        $studend->save();
         return redirect('studend_create');
 
     }
 
     //select
 
-    #[NoReturn] public function index ()
+    #[NoReturn] public function index (Request $request)
     {
         //يمكن  استخدام  statement بدل  select ولكن  select افضل  من حيث الحماية
-//        $query="SELECT * FROM studend ";
-//       $result= DB::select($query);
-
-        //Query Builder
-//ممكن  تاخد  ->where('id',11)
-
-//        $result= DB::table('studend')
-//            ->select('*')
-//            ->get();
-//        return view('studends.studend')->with('studend',$result);
-
-
 
         //model
         //withTrashed   الجميع
         //onlyTrashed    فقط المحذوف
+/*
+        //لعمل Pagination  ل جميع الصفحات :
+        1.استخدام  paginate بدل get
+        2.إرسال  request مع البيانات
 
+*/
+        $paginate=10;
+        $studends=studend::withTrashed()->select('*')
+            ->paginate($paginate);
+        foreach($studends as $studend) {
+            $im =Storage::url($studend->image);
+            $studend->image=$im;
 
-        $result=studend::select('*')
-            ->get();
-       return view('studends.studend')->with('studend',$result);
+            }
+//        dd($studends->toArray());
+
+       return view('studends.studend')->with('studend',$studends);
     }
 
     //edit
@@ -113,6 +106,8 @@ class studendController extends Controller
 
         $studend=studend::where('id',$id)
             ->first();
+        $im =Storage::url($studend->image);
+        $studend->image=$im;
         $key=['pl'=>'فلسطين','ag'=>'مصر','ar'=>'الأردن'];
         return view('studends.edit')->with('studend',$studend)->with('key' ,$key);
 
@@ -120,10 +115,15 @@ class studendController extends Controller
 
 
     public function  update (Request $request,$id){
+
         $name=$request['name'];
         $Brith_Date=$request['Brith_Date'];
         $Nationality=$request['Nationality'];
 
+        $image=$request->file('image');
+        $path='up_lodes/images';
+        $names=time()+rand(1,10000000).'.'.$image->getClientOriginalExtension();
+        Storage::disk('local')->put($path.$names,file_get_contents($image));
 
         //row
 
@@ -149,6 +149,7 @@ class studendController extends Controller
         $studend->name=$name;
         $studend->Brith_Date=$Brith_Date;
         $studend->Nationality=$Nationality;
+        $studend->image=$path.$names;
         $studend->save();
         return redirect('studend');
     }

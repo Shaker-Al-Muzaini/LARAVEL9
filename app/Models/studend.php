@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property mixed $name
  * @property mixed $Brith_Date
  * @property mixed $Nationality
+ * @property mixed|string $image
  * @method static where(string $string, $id)
  * @method static select(string $string)
  */

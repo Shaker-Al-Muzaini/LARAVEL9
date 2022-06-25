@@ -8,7 +8,7 @@
         </div>
     <div class="row">
         <div class="col-12">
-        <form action="{{URL('studend_store')}}"  method="post">
+        <form action="{{URL('studend_store')}}"  method="post" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
     <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
@@ -16,7 +16,7 @@
     </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Brith_Date</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" name="Brith_Date">
+            <input type="date" class="form-control" aria-label="Sizing example input" name="Brith_Date">
         </div>
 
     <div class="input-group input-group-lg">
@@ -31,8 +31,15 @@
             @endforeach
         </select>
 
-        <br>
+        <br><br>
     </div>
+            <br>
+            <div class="form-group">
+
+                <span class="input-group-text">Image</span>
+                <input type="file" class="form-control" aria-label="Sizing example input" name="image">
+
+            </div>
             <br>
             <button type="submit" class="btn btn-primary" id="save">Save</button>
         </form>
