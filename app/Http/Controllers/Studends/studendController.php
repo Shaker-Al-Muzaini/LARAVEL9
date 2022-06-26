@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers\Studends;  
 use App\Http\Controllers\Controller;
-use App\Models\studend;
+use App\Models\studend; 
 use Illuminate\Http\Request;  
 use JetBrains\PhpStorm\NoReturn; 
  
