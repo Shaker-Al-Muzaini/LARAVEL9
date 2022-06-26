@@ -3,7 +3,7 @@ namespace App\Http\Controllers\Studends;
 use App\Http\Controllers\Controller;
 use App\Models\studend;
 use Illuminate\Http\Request;  
-use JetBrains\PhpStorm\NoReturn;
+use JetBrains\PhpStorm\NoReturn; 
  
 
 class studendController extends Controller
