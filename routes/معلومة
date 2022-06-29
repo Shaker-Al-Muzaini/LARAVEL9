@@ -68,7 +68,7 @@ whet is  controller
 CRUD: Create, Read, Update, Delete هادا الاختصار الرسمي  لها
 student controller لا  جميع العمليات  ألأساسيه   فقط
 student update info controller
-student create info controller
+student create info controller 
 
 في laravel  controller  أسماء  خاصه  في العمليات ألأساسيه اسمها
 resource controller  :
