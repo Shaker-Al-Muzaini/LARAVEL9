@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',static function () {
+Route::get('/',static function () { 
     return view('welcome'); 
 });
 Route::Get('test', static function (){
