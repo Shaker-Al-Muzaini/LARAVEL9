@@ -33,4 +33,4 @@ Route::post('studend_store',[studendController::class,'store']);
 Route::get('studend',[studendController::class,'index']);
 Route::get('studend_edit::46779::5{id}18::6798',[studendController::class,'edit']);
 Route::post('studend_upDate{id}',[studendController::class,'update']);
-Route::post('studend_delete{id}',[studendController::class,'destroy']);
+Route::post('studend_delete{id}',[studendController::class,'destroy']); 
