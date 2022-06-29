@@ -19,7 +19,7 @@ Route::get('/',static function () {
     return view('welcome'); 
 });
 Route::Get('test', static function (){
-    return view('p1');
+    return view('p1'); 
 });
 
 Route::Get('man', static function(){
