@@ -12,4 +12,4 @@
 {{--            <h2>no</h2>--}}
 {{--        @endif--}}
 
-@stop
+@endsection

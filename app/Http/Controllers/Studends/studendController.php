@@ -37,6 +37,9 @@ class studendController extends Controller
         $nema=$request['name'];
         $Brith_Date=$request['Brith_Date'];
         $Nationality=$request['Nationality'];
+        $price=$request['price'];
+        $discount=$request['discount'];
+        $tax=$request['tax'];
          //model
         $image=$request->file('image');
         $path='up_lodes/images';
@@ -48,6 +51,10 @@ class studendController extends Controller
         $studend->name=$nema;
         $studend->Brith_Date=$Brith_Date;
         $studend->Nationality=$Nationality;
+        $studend->price=$price;
+        $studend->discount=$discount;
+        $studend->tax=$tax;
+
        $result= $studend->image=$path.$names;
 
         //check
@@ -77,6 +84,12 @@ class studendController extends Controller
         $studends=studend::select('*')
             ->paginate(pagination);
         foreach($studends as $studend) {
+            $discount_value=($studend->discount/100)*$studend->price;
+            $price_after_discount=($studend->price-$discount_value);
+            $tax_value=($studend->tax / 100)*$price_after_discount;
+            $tax_after_value=$studend->price-$tax_value;
+            $english_format_number = number_format($tax_after_value, 2, '.', '');
+            $studend->final_price=$english_format_number;
             $im =Storage::url($studend->image);
             $studend->image=$im;
 
@@ -122,6 +135,9 @@ class studendController extends Controller
         $name=$request['name'];
         $Brith_Date=$request['Brith_Date'];
         $Nationality=$request['Nationality'];
+        $price=$request['price'];
+        $discount=$request['discount'];
+        $tax=$request['tax'];
 
         $image=$request->file('image');
         $path='up_lodes/images';
@@ -152,6 +168,9 @@ class studendController extends Controller
         $studend->name=$name;
         $studend->Brith_Date=$Brith_Date;
         $studend->Nationality=$Nationality;
+        $studend->price=$price;
+        $studend->discount=$discount;
+        $studend->tax=$tax;
         $studend->image=$path.$names;
         $studend->save();
         return redirect('studend');

@@ -35,6 +35,18 @@
 
                         <br>
                     </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Price</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" name="price" value="{{$studend->price}}" >
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Tax</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" name="discount" value="{{$studend->tax}}">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Discount</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" name="tax" value="{{$studend->discount}}">
+                    </div>
                     <br>
                     <div class="form-group">
 

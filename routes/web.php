@@ -35,3 +35,11 @@ Route::get('studend_edit::46779::5{id}18::6798',[studendController::class,'edit'
 Route::put('studend_upDate{id}',[studendController::class,'update']);
 Route::post('studend_delete{id}',[studendController::class,'destroy']);
 Route::post('sectiontest',[studendController::class,'sectiontestview']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -15,6 +15,10 @@
         <th scope="col">Create_At</th>
         <th scope="col">Update_At</th>
         <th scope="col">Deleted_at</th>
+        <th scope="col">Price</th>
+        <th scope="col">Tex%</th>
+        <th scope="col">Discount%</th>
+        <th scope="col">Final_Price$</th>
         </thead>
         <tbody>
         @foreach($studend as $studends )
@@ -35,6 +39,10 @@
                 <td>{{$studends->created_at}}</td>
                 <td>{{$studends->updated_at}}</td>
                 <td>{{$studends->deleted_at}}</td>
+                <td>{{$studends->price}}$</td>
+                <td>{{$studends->discount}}%</td>
+                <td>{{$studends->tax}}%</td>
+                <td>{{$studends->final_price}}$</td>
 
             </tr>
         @endforeach

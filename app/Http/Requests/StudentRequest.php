@@ -29,6 +29,9 @@ class StudentRequest extends FormRequest
             'Brith_Date'=>'required',
             'Nationality'=>'required',
             'image'=>'required',
+            'price'=>'required',
+            'discount'=>'required',
+            'tax'=>'required',
         ];
     }
 
@@ -40,6 +43,9 @@ class StudentRequest extends FormRequest
            'Brith_Date.required'=>'Brith_Date  is  required',
            'Nationality.required'=>'Nationality  is  required',
            'image.required'=>'image  is  required',
+           'price.required'=>'price  is  required',
+           'discount.required'=>'discount  is  required',
+           'tax.required'=>'tax is  required',
 
 
        ];

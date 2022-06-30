@@ -11,6 +11,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property mixed $Brith_Date
  * @property mixed $Nationality
  * @property mixed|string $image
+ * @property mixed $price
+ * @property mixed $discount
+ * @property mixed $tax
  * @method static where(string $string, $id)
  * @method static select(string $string)
  */
