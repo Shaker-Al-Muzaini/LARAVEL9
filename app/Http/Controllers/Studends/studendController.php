@@ -6,7 +6,7 @@ use App\Models\studend;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use JetBrains\PhpStorm\NoReturn; 
- 
+  
 
 class studendController extends Controller
 {
