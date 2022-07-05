@@ -30,7 +30,7 @@ class studendController extends Controller
         return view('studends.selectstudens')->with('key' ,$key);
     }
 
-    //create
+    //create 
 
      #[NoReturn] public function store(StudentRequest $request)
     {
