@@ -36,7 +36,7 @@ class studendController extends Controller
     {
         $nema=$request['name'];
         $Brith_Date=$request['Brith_Date'];
-        $Nationality=$request['Nationality'];
+        $Nationality=$request['Nationality']; 
         $price=$request['price'];
         $discount=$request['discount'];
         $tax=$request['tax'];
