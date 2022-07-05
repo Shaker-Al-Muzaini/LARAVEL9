@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Studends;   
+namespace App\Http\Controllers\Studends;    
 use App\Http\Controllers\Controller; 
 use App\Http\Requests\StudentRequest;
 use App\Models\studend;
