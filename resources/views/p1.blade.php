@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main') 
 @section('bott')
 <h1>Shaker Almazini</h1>    
 <h1 style="color: red">ابعت لغة</h1>
