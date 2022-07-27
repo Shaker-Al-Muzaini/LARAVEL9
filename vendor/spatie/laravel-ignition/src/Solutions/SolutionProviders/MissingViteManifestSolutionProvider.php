@@ -20,6 +20,6 @@ class MissingViteManifestSolutionProvider implements HasSolutionsForThrowable
             BaseSolution::create('Missing Vite Manifest File')
                 ->setSolutionDescription('Did you forget to run `npm install && npm run dev`?'),
         ];
-    }
+    } 
    
 }
