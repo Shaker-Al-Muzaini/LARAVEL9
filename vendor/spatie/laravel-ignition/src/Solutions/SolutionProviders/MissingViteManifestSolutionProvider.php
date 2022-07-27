@@ -21,4 +21,5 @@ class MissingViteManifestSolutionProvider implements HasSolutionsForThrowable
                 ->setSolutionDescription('Did you forget to run `npm install && npm run dev`?'),
         ];
     }
+   
 }
